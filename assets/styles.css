@@ -1,0 +1,269 @@
+/* Default Attributes */
+html, body {
+    background-color:black;
+    color:rgb(205, 207, 212);
+    font-family:Cambria;
+    min-width:400px;
+    min-height:500px;
+    height:100%;
+    margin:0;
+    padding:0;
+    
+}
+
+/* Link Formatting */
+a {
+  color: white;
+  text-decoration: underline;
+}
+a:hover {
+  color: rgb(204, 217, 239); 
+}
+a:active {
+  color: lightcoral;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or cover */
+  object-position: center; /* centers the image */
+  display: block; /* removes inline spacing */
+}
+
+/* Header Formatting */
+h1,h2,h3,h4,h5,h6 {
+    margin:0;
+    padding:0;
+}
+h1,h2,h3{
+    color: rgb(244, 246, 252);
+    font-family:Verdana
+}
+
+.line {
+    width:100%;
+    border: 0.5px solid grey;
+}
+.subline {
+    width: 80%;
+    border: 0.5px solid grey;
+}
+
+/* Scrollbar Formatting */
+::-webkit-scrollbar {
+    width:12px;
+    min-height:6px;
+}
+::-webkit-scrollbar-track {
+    background-color:black;
+}
+::-webkit-scrollbar-thumb {
+    background-color:grey;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color:rgb(204, 217, 239);
+}
+body::-webkit-scrollbar {display: none;} /* Will Not Appear in Body */
+
+.header, .footer {
+    display:flex;
+    flex-direction:column;
+    margin:0;
+    padding:0;
+    /* HOW TO CENTER A DIV */
+    justify-content:center; 
+    align-items:center;
+}
+.header {
+    height:15%;
+    border-bottom: 0.5px solid grey;
+}
+.footer {
+    height:5%;
+    border-top: 0.5px solid grey;
+    font-size:small;
+}
+
+.main {
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start; 
+    align-content:center;
+    overflow:visible;
+}
+
+.section-content {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start; 
+    align-items:center;
+    border: 0.5px solid grey;
+    border-top: none;
+    margin-left:20%;
+    margin-right:20%;
+    margin-top:0;
+    margin-bottom:0;
+    height:87%;
+    flex-shrink:1;
+    overflow-y:scroll;
+    overflow-x:auto;
+}
+[data-section-content] {
+    position:relative;
+    display:none;
+}
+.active[data-section-content] {
+    display:block;
+}
+#home.active {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:right;
+    width:80%;
+    height:100%;
+    overflow:wrap;
+}
+#resume.active {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start; 
+    align-items:center;
+    width:80%;
+}
+#projects.active {
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end; 
+    align-items:flex-start;
+    gap:1%;
+    width:100%;
+    height:100%;
+}
+
+.section-tabs {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    list-style-type:none;
+    border: 0.5px solid grey;
+    border-top: none;
+    margin-left:20%;
+    margin-right:20%;
+    margin-top:0;
+    margin-bottom:0;
+    padding:0;
+}
+.section-tab {
+    cursor:pointer;
+    padding:10px;
+}
+.section-tab:hover {
+    color:rgb(204, 217, 239);
+}
+.section-tab:active {
+    color:lightcoral;
+}
+.section-tab.active {
+    color:white;
+}
+.section-tab.active:hover {
+    color:rgb(204, 217, 239);
+}
+.section-tab.active:active {
+    color:lightcoral;
+}
+
+.project-content {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start; 
+    align-items:center;
+    border:0.5px solid grey;
+    margin:20px;
+    width:95%;
+    height:87%;
+    flex-shrink:1;
+    overflow-y:scroll;
+    overflow-x:auto;
+}
+[data-project-content] {
+    position:relative;
+    display:none;
+}
+.active[data-project-content] {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    width:90%;
+    height:100%;
+}
+#default.active {
+    justify-content:center;
+}
+
+.project {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    width:500px;
+    padding:1%;
+    border: 0.5px solid grey;
+}
+
+.project-tabs {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    list-style-type:none;
+    height:87%;
+}
+.project-tab {
+    cursor:pointer;
+    padding:10px;
+}
+.project-tab img {
+    width: 32px;      /* width of ONE frame */
+    height: 32px;      /* height of ONE frame */
+    object-fit: none;  /* prevents scaling */
+    object-position: 0px 0; /* idle frame */
+    display: block;
+    
+}
+.project-tab:hover img {
+    object-position: -32px 0; /* hover frame */
+}
+.project-tab:active img {
+    object-position: -128px 0; /* select frame */
+}
+.project-tab.active img {
+    object-position: -64px 0; /* active frame */
+}
+.project-tab.active:hover img {
+    object-position: -96px 0; /* active hover frame */
+}
+.project-tab.active:active img {
+    object-position: -160px 0; /* active select frame */
+}
+
+.project-header {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+}
+.project-divider {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    align-items:center;
+    width:100%;
+}
+.project-image {
+    width:80%
+}
